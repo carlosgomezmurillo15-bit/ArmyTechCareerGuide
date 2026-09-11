@@ -2,6 +2,7 @@
   --ink: #101820;
   --ink-soft: #25313d;
   --paper: #f3f2ec;
+  --paper-deep: #e7e5dc;
   --white: #ffffff;
   --green: #587247;
   --green-dark: #34452d;
@@ -100,7 +101,7 @@ footer {
   margin-inline: auto;
 }
 
-/* OPENING SECTION */
+/* TITLE AREA */
 
 .title-block {
   min-height: 520px;
@@ -173,7 +174,7 @@ h1 {
   color: var(--ink);
 }
 
-/* SECTIONS */
+/* GENERAL SECTIONS */
 
 .section-block {
   padding: 76px 0;
@@ -197,14 +198,11 @@ h2 {
 /* INTRODUCTION */
 
 .introduction {
-  display: grid;
-  grid-template-columns: minmax(180px, 0.7fr) minmax(0, 2fr);
-  column-gap: 60px;
-  align-items: start;
+  display: block;
 }
 
 .introduction h2 {
-  padding-top: 8px;
+  margin-bottom: 24px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.05rem;
   font-weight: 800;
@@ -213,6 +211,7 @@ h2 {
 }
 
 .intro-copy {
+  width: 100%;
   padding: 30px 34px;
   background: var(--green-pale);
   border-top: 5px solid var(--green);
@@ -224,26 +223,6 @@ h2 {
 
 .intro-copy p + p {
   margin-top: 20px;
-}
-
-.pdf-link {
-  grid-column: 2;
-  width: fit-content;
-  margin-top: 20px;
-  padding: 10px 0 5px;
-  color: var(--green-dark);
-  border-bottom: 2px solid var(--green-dark);
-  font-size: 0.88rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.pdf-link:hover,
-.pdf-link:focus-visible {
-  color: var(--ink);
-  border-bottom-color: var(--gold);
 }
 
 /* CATEGORY HEADINGS */
@@ -405,7 +384,7 @@ footer p {
   margin: 3px 0;
 }
 
-/* TABLET LAYOUT */
+/* TABLET */
 
 @media (max-width: 920px) {
   :root {
@@ -472,7 +451,7 @@ footer p {
   }
 }
 
-/* PHONE LAYOUT */
+/* PHONE */
 
 @media (max-width: 700px) {
   .header-inner {
@@ -505,16 +484,6 @@ footer p {
 
   .section-block {
     padding: 54px 0;
-  }
-
-  .introduction {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .introduction h2,
-  .pdf-link {
-    grid-column: 1;
   }
 
   .intro-copy {
@@ -552,11 +521,10 @@ footer p {
   }
 }
 
-/* PDF AND PRINT LAYOUT */
+/* PRINT */
 
 @media print {
-  .site-header,
-  .pdf-link {
+  .site-header {
     display: none;
   }
 
