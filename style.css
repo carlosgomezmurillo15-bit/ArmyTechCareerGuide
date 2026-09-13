@@ -10,6 +10,7 @@
   --line: #b9b7ad;
   --muted: #666b66;
   --rail-width: 252px;
+  --font-main: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -24,7 +25,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-main);
   font-size: 16px;
   line-height: 1.65;
 }
@@ -33,7 +34,7 @@ a {
   color: inherit;
 }
 
-/* LEFT NAVIGATION */
+/* LEFT RAIL */
 
 .site-header {
   position: fixed;
@@ -51,7 +52,7 @@ a {
   left: 31px;
   bottom: 34px;
   color: var(--ink-light);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-main);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -68,7 +69,7 @@ a {
   padding: 0 0 24px;
   color: var(--ink);
   border-bottom: 3px solid var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-main);
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.15;
@@ -85,7 +86,7 @@ nav a {
   padding: 13px 4px;
   color: var(--ink-light);
   border-bottom: 1px solid rgba(24, 32, 31, 0.28);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-main);
   font-size: 0.77rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -118,8 +119,6 @@ footer {
   margin-inline: auto;
 }
 
-/* TITLE AREA */
-
 .title-block {
   min-height: 500px;
   padding: 76px 0 58px;
@@ -135,7 +134,7 @@ footer {
   padding: 0 0 7px;
   color: var(--rust);
   border-bottom: 2px solid var(--rust);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-main);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -153,10 +152,10 @@ h1 {
   max-width: 900px;
   margin: 0;
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-main);
   font-size: clamp(2.8rem, 6vw, 5.3rem);
-  font-weight: 500;
-  letter-spacing: -0.045em;
+  font-weight: 700;
+  letter-spacing: -0.05em;
   line-height: 1;
 }
 
@@ -166,7 +165,7 @@ h1 {
   padding-left: 18px;
   color: var(--ink-light);
   border-left: 5px solid var(--rust);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-main);
   font-size: 1.18rem;
   line-height: 1.5;
 }
@@ -184,7 +183,7 @@ h1 {
   align-items: center;
   color: var(--ink-light);
   background: var(--paper-light);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-main);
   font-size: 0.76rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -213,9 +212,9 @@ h1 {
 h2 {
   margin: 0;
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-main);
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.08;
 }
@@ -274,7 +273,7 @@ section.introduction.section-block {
 .section-number {
   margin: 1px 0 0;
   color: var(--rust);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-main);
   font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: -0.08em;
@@ -295,7 +294,7 @@ section.introduction.section-block {
   color: var(--muted);
 }
 
-/* SOURCE ENTRIES */
+/* SOURCES */
 
 .source-card {
   position: relative;
@@ -307,8 +306,7 @@ section.introduction.section-block {
     "tags annotation"
     "title annotation"
     "citation annotation"
-    "link annotation"
-    "count annotation";
+    "link annotation";
   column-gap: 52px;
   align-items: start;
   border-top: 1px solid var(--ink);
@@ -345,7 +343,7 @@ section.introduction.section-block {
   color: var(--olive);
   background: transparent;
   border: 1px solid var(--khaki-dark);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-main);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -357,7 +355,7 @@ section.introduction.section-block {
   grid-area: title;
   margin: 17px 0 8px;
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-main);
   font-size: 1.48rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -380,7 +378,7 @@ section.introduction.section-block {
   color: var(--rust);
   background: transparent;
   border-bottom: 2px solid var(--rust);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-main);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -389,7 +387,7 @@ section.introduction.section-block {
 }
 
 .source-link::after {
-  content: "  ↗";
+  content: " ↗";
 }
 
 .source-link:hover,
@@ -398,8 +396,6 @@ section.introduction.section-block {
   background: transparent;
   border-bottom-color: var(--ink);
 }
-
-/* ANNOTATIONS */
 
 .annotation {
   grid-area: annotation;
@@ -417,18 +413,8 @@ section.introduction.section-block {
 
 .annotation strong {
   color: var(--olive);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-main);
   font-size: 0.9rem;
-}
-
-.word-count {
-  grid-area: count;
-  margin: 16px 0 0;
-  color: var(--muted);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 /* FOOTER */
@@ -439,7 +425,7 @@ footer {
   background: var(--ink);
   border-top: 5px solid var(--rust);
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-main);
   font-size: 0.76rem;
   letter-spacing: 0.04em;
 }
@@ -578,8 +564,7 @@ footer p {
       "title"
       "citation"
       "link"
-      "annotation"
-      "count";
+      "annotation";
   }
 
   .annotation {
