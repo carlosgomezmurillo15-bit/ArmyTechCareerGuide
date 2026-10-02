@@ -1,166 +1,856 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A practical Army-to-tech career guide by Carlos Gomez, connecting job choice, military experience, training, benefits, and the civilian job search.">
-  <title>From Army Service to a Tech Career | Carlos Gomez</title>
-  <link rel="stylesheet" href="roadmap.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to guide</a>
+:root {
+  --ink: #18201f;
+  --ink-light: #3e4744;
+  --paper: #f1efe7;
+  --paper-light: #faf9f5;
+  --khaki: #d4c9aa;
+  --olive: #4d5942;
+  --rust: #a4472d;
+  --line: #b9b7ad;
+  --muted: #666b66;
+  --rail-width: 258px;
+  --font-main: Arial, Helvetica, sans-serif;
+}
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="site-name" href="index.html">Army Tech Career Guide</a>
-      <nav aria-label="Site navigation">
-        <a href="index.html">Source collection</a>
-        <a class="current" href="career-roadmap.html" aria-current="page">Career roadmap</a>
-        <a href="#plan">Your plan</a>
-        <a href="#sources">Sources</a>
-      </nav>
-    </div>
-  </header>
+* {
+  box-sizing: border-box;
+}
 
-  <main id="main">
-    <header class="hero">
-      <p class="kicker">CMPA 4301 / Project 02</p>
-      <h1>From Army service<br>to a tech career</h1>
-      <p class="deck">A guide to choosing a civilian IT or cybersecurity goal, using the experience you already have, and making your next move count.</p>
-      <p class="byline">Carlos Gomez</p>
-    </header>
+html {
+  scroll-behavior: smooth;
+}
 
-    <div class="page-grid">
-      <aside class="contents" aria-label="On this page">
-        <p class="contents-title">In this guide</p>
-        <a href="#start">Start here</a>
-        <a href="#role">Pick a role</a>
-        <a href="#skills">Translate your experience</a>
-        <a href="#training">Choose training</a>
-        <a href="#funding">Check the cost</a>
-        <a href="#experience">Build proof</a>
-        <a href="#search">Apply and get feedback</a>
-        <a href="#example">A worked example</a>
-        <a href="#plan">Make your plan</a>
-      </aside>
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.65;
+}
 
-      <div class="article">
-        <section id="start" class="intro">
-          <h2>Start with the job, then work backward</h2>
-          <p>I put this together for Soldiers who are interested in civilian tech work but are staring at too many options. I am in the Army Reserve as a 35F intelligence analyst, close to graduating with a degree in Computing Applications, and thinking about my own next steps. A degree, a certification, a training program, and an internship can all sound useful. They do different jobs, though, and the order matters.</p>
-          <p>The <a href="index.html">source collection I built for Project 01</a> gathers and evaluates the individual resources. This guide connects them into a process. Choose a job you can name. Compare its requirements with what you can already show. Fill a specific gap, check the cost, get practical evidence, and then take that story into the job search. You can read straight through or jump to the decision you are making now.</p>
-          <p class="scope">This is for active-duty and Reserve Soldiers exploring civilian IT and cybersecurity careers, especially those approaching graduation or a transition. It is a starting point for making choices, not a promise that one credential or program leads to a job.</p>
-        </section>
+a {
+  color: inherit;
+}
 
-        <section id="role" class="chapter">
-          <p class="chapter-number">1 / Direction</p>
-          <h2>Pick a role before you pick a course</h2>
-          <p>“I want to work in cybersecurity” is a start, but it does not tell you what to study. A security operations analyst monitors alerts and investigates activity. A governance, risk, and compliance (GRC) analyst works with controls, policies, and evidence. An IT support specialist solves user and system problems. These roles share some skills, but their day-to-day work is different.</p>
-          <p>Try <a href="https://www.mynextmove.org/vets/">My Next Move for Veterans</a> to connect military experience with civilian occupations, then use <a href="https://www.cyberseek.org/">CyberSeek</a> to look at cybersecurity roles and the skills associated with them. These are maps, not hiring guarantees. Open a few real job postings in your area and check whether the tools, tasks, and experience in those postings match the picture the career sites give you.</p>
-          <div class="margin-note"><strong>Make it concrete:</strong> Write down one target role and two related entry points. Save three job postings and underline the requirements that appear more than once.</div>
-        </section>
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: -9999px;
+  z-index: 100;
+  padding: 9px 14px;
+  color: var(--paper-light);
+  background: var(--ink);
+}
 
-        <section id="skills" class="chapter">
-          <p class="chapter-number">2 / Translation</p>
-          <h2>See what your Army experience already covers</h2>
-          <p>Military work can be relevant even if the job title does not sound technical. An intelligence analyst may already be used to checking information, documenting findings, briefing people, and handling sensitive material. That does not automatically qualify someone to administer a network or investigate a security incident. The useful question is: which parts of my work can I demonstrate, and which parts still need hands-on practice?</p>
-          <p>The <a href="https://csrc.nist.gov/pubs/sp/800/181/r1/final">NIST NICE Framework</a> breaks cybersecurity work into tasks, knowledge, and skills. Compare a target job with the work you actually did, then describe that work in civilian language. If you are planning another degree or using past training toward one, the <a href="https://militaryguide.acenet.edu/">ACE Military Guide</a> helps identify credit recommendations; your school decides what credit it accepts.</p>
-          <div class="margin-note"><strong>One honest translation:</strong> “Prepared intelligence products for leaders using multiple information sources” is stronger than claiming cybersecurity experience you have not had.</div>
-        </section>
+.skip-link:focus {
+  left: 10px;
+}
 
-        <section id="training" class="chapter">
-          <p class="chapter-number">3 / Preparation</p>
-          <h2>Choose training for the gap you found</h2>
-          <p>A credential is useful when it helps you meet a real requirement. It is less useful when it is only another line on a resume. Compare the job postings you saved with your skills list. If they repeatedly ask for networking basics, study and practice networking. If they ask for policy writing and control testing, a pile of unrelated technical certificates will not answer that need.</p>
-          <p><a href="https://www.cool.osd.mil/army/index.html">Army COOL</a> lets Soldiers explore credentials related to military and civilian occupations. <a href="https://ivmf.syracuse.edu/programs/career-training/about-o2o/">Onward to Opportunity</a> offers career training and certification paths for eligible service members and military-connected learners. Check the current program details before building a schedule around either option.</p>
+/* LEFT NAVIGATION */
 
-          <div class="comparison" role="group" aria-label="Ways to close a skill gap">
-            <div>
-              <h3>Degree coursework</h3>
-              <p>Good for a broad foundation and roles that require a degree. Compare remaining classes with your target role before adding another program.</p>
-            </div>
-            <div>
-              <h3>Certification</h3>
-              <p>Good for a named skill or hiring requirement. Choose it after checking postings and plan to practice the skill, not only pass the exam.</p>
-            </div>
-            <div>
-              <h3>Structured training</h3>
-              <p>Good when you need a schedule and support. Ask what you will actually make or demonstrate by the end.</p>
-            </div>
-          </div>
+.site-header {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 10;
+  width: var(--rail-width);
+  background: var(--khaki);
+  border-right: 1px solid var(--ink);
+}
 
-          <p class="small-note">These can overlap. The goal is to close the clearest gap first, not collect all three at once.</p>
-        </section>
+.site-header::after {
+  content: "CMPA 4301";
+  position: absolute;
+  left: 31px;
+  bottom: 29px;
+  color: var(--ink-light);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
 
-        <section id="funding" class="chapter">
-          <p class="chapter-number">4 / Cost</p>
-          <h2>Check the cost before you commit</h2>
-          <p>Once you have a training choice, look at the whole bill: tuition or course fees, exams, books, time, and any out-of-pocket costs. The <a href="https://myarmybenefits.us.army.mil/Benefit-Library/Federal-Benefits/Tuition-Assistance-%28TA%29">Army Tuition Assistance page</a> explains the education benefit and points to current requirements. The <a href="https://www.va.gov/education/gi-bill-comparison-tool/">VA GI Bill Comparison Tool</a> helps compare approved schools and estimated benefits. Those sources answer different questions, so use the one that fits the program you are considering.</p>
-          <p>Do not assume a school, course, or exam is covered just because a benefit exists. Ask the education office or program contact about your eligibility and approval steps before enrolling. If a free or funded option closes the same gap, compare it with the paid one rather than choosing by brand name.</p>
-        </section>
+.header-inner {
+  min-height: 100vh;
+  padding: 34px 30px 80px;
+  display: flex;
+  flex-direction: column;
+}
 
-        <section id="experience" class="chapter">
-          <p class="chapter-number">5 / Evidence</p>
-          <h2>Build proof you can talk about in an interview</h2>
-          <p>Training gives you knowledge. Employers also need to see how you use it. For a technical role, that could be a documented home lab, a troubleshooting write-up, or a project from class. For GRC, it might be a sample risk register or a plain-language explanation of a security control. Use fictional or public information in portfolio examples; never publish Army material.</p>
-          <p><a href="https://www.skillbridge.mil/">DoD SkillBridge</a> connects eligible transitioning service members with industry training opportunities, subject to command approval and program rules. <a href="https://www.apprenticeship.gov/apprenticeship-job-finder">Apprenticeship.gov's Job Finder</a> is another way to locate earn-and-learn opportunities. SkillBridge is tied to a particular transition window; an apprenticeship may fit a different timeline. Neither replaces checking the actual opening and its requirements.</p>
-        </section>
+.site-name {
+  padding-bottom: 22px;
+  border-bottom: 3px solid var(--ink);
+  color: var(--ink);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-decoration: none;
+}
 
-        <section id="search" class="chapter">
-          <p class="chapter-number">6 / Search</p>
-          <h2>Make the civilian version of your story clear</h2>
-          <p>Use the target job title in your search, and make each resume bullet show a task, an action, and an outcome when you can. Spell out military terms the first time. A civilian hiring manager should understand what you did without knowing your MOS. Match the resume to the posting, but do not claim tools you have not used.</p>
-          <p><a href="https://www.acp-usa.org/">American Corporate Partners</a> offers a mentoring program that can help veterans and eligible military spouses get feedback from someone in industry. <a href="https://www.militaryonesource.mil/resources/millife-guides/employment/">Military OneSource's employment resources</a> offer career and transition support. A mentor can help test whether your target role and resume make sense, while a career resource can help with the mechanics of applications. Ask for specific feedback: “Which part of this resume would make you unsure I can do this job?”</p>
-        </section>
+.collection-button {
+  margin-top: 25px;
+  padding: 13px 14px;
+  display: block;
+  color: var(--paper-light);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 
-        <section id="example" class="example">
-          <p class="chapter-number">Putting it together</p>
-          <h2>What this could look like for a 35F</h2>
-          <p>Say a 35F who is nearly done with a Computing Applications degree is interested in GRC. They find GRC postings through CyberSeek and local employers, then compare the repeated tasks with the NICE Framework. Their experience briefing leaders, checking sources, and documenting findings gives them a story about analysis and communication. The gap is experience with civilian security controls and risk documentation.</p>
-          <p>Instead of signing up for several certifications at once, they choose one relevant course or credential, check Army COOL and benefit rules, and make a sample risk register using fictional data. They put the project beside two honest Army examples on a resume and ask a mentor to review it. If GRC openings require more experience than they have, they also apply to related analyst or IT support roles. That is a workable direction, with room to adjust after real feedback.</p>
-          <p class="small-note">This is an example of the decision process, not a claim that every 35F has the same experience or qualifies for the same program.</p>
-        </section>
+.collection-button span {
+  margin-top: 3px;
+  display: block;
+  color: var(--khaki);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
 
-        <section id="plan" class="plan">
-          <p class="chapter-number">Take this with you</p>
-          <h2>Your one-page plan</h2>
-          <p>Keep this short enough to revisit when you find a new program or job posting. You can write it in a notebook, a document, or the notes on your phone.</p>
-          <ol>
-            <li><strong>Target:</strong> My first-choice role is ________. Two related roles are ________ and ________.</li>
-            <li><strong>Evidence:</strong> Three job postings keep asking for ________. I can already show ________ from Army, school, or personal work.</li>
-            <li><strong>Gap:</strong> The one skill or experience I most need to build is ________.</li>
-            <li><strong>Training and cost:</strong> I will compare ________ with ________ and confirm eligibility before I enroll.</li>
-            <li><strong>Proof:</strong> I can make or complete ________ to show the skill in practice.</li>
-            <li><strong>Feedback:</strong> I will ask ________ to review my resume or project, then apply to ________ roles.</li>
-          </ol>
-          <p>Return to the <a href="index.html">curated collection</a> when you need deeper notes on a source. The guide gives you the order; the collection shows what each resource can and cannot do.</p>
-        </section>
+.collection-button:hover,
+.collection-button:focus-visible {
+  color: white;
+  background: var(--rust);
+}
 
-        <section id="sources" class="sources">
-          <h2>Sources used in this guide</h2>
-          <p>These are the resources behind the decisions above. Each is discussed in more detail in the <a href="index.html">Project 01 collection</a>.</p>
-          <ul>
-            <li><a href="https://www.mynextmove.org/vets/">My Next Move for Veterans</a> — National Center for O*NET Development</li>
-            <li><a href="https://www.cyberseek.org/">CyberSeek</a> — Lightcast, CompTIA, NIST NICE</li>
-            <li><a href="https://csrc.nist.gov/pubs/sp/800/181/r1/final">NICE Workforce Framework for Cybersecurity</a> — NIST</li>
-            <li><a href="https://militaryguide.acenet.edu/">ACE Military Guide</a> — American Council on Education</li>
-            <li><a href="https://www.cool.osd.mil/army/index.html">Army COOL</a> — Department of Defense</li>
-            <li><a href="https://ivmf.syracuse.edu/programs/career-training/about-o2o/">Onward to Opportunity</a> — Syracuse University IVMF</li>
-            <li><a href="https://myarmybenefits.us.army.mil/Benefit-Library/Federal-Benefits/Tuition-Assistance-%28TA%29">Tuition Assistance</a> — MyArmyBenefits</li>
-            <li><a href="https://www.va.gov/education/gi-bill-comparison-tool/">GI Bill Comparison Tool</a> — U.S. Department of Veterans Affairs</li>
-            <li><a href="https://www.skillbridge.mil/">DoD SkillBridge</a> — Department of Defense</li>
-            <li><a href="https://www.apprenticeship.gov/apprenticeship-job-finder">Apprenticeship Job Finder</a> — U.S. Department of Labor</li>
-            <li><a href="https://www.acp-usa.org/">American Corporate Partners</a> — mentoring program</li>
-            <li><a href="https://www.militaryonesource.mil/resources/millife-guides/employment/">Employment resources</a> — Military OneSource</li>
-          </ul>
-        </section>
-      </div>
-    </div>
-  </main>
+.collection-button:hover span,
+.collection-button:focus-visible span {
+  color: white;
+}
 
-  <footer class="site-footer">
-    <span>Carlos Gomez · CMPA 4301</span>
-    <a href="index.html">Explore the source collection →</a>
-  </footer>
-</body>
-</html>
+nav {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+nav a {
+  padding: 9px 4px;
+  color: var(--ink-light);
+  border-bottom: 1px solid rgba(24, 32, 31, 0.25);
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a::before {
+  content: "/ ";
+  color: var(--rust);
+}
+
+nav a:hover,
+nav a:focus-visible {
+  padding-left: 9px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.27);
+}
+
+/* PAGE FRAME */
+
+main,
+footer {
+  margin-left: var(--rail-width);
+}
+
+.title-block,
+.section-block {
+  width: min(1080px, calc(100% - 88px));
+  margin-inline: auto;
+}
+
+/* HERO */
+
+.title-block {
+  min-height: 535px;
+  padding: 76px 0 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-bottom: 2px solid var(--ink);
+}
+
+.eyebrow {
+  width: fit-content;
+  margin: 0 0 24px;
+  padding-bottom: 7px;
+  color: var(--rust);
+  border-bottom: 2px solid var(--rust);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  max-width: 930px;
+  margin: 0;
+  font-size: clamp(2.9rem, 6vw, 5.35rem);
+  font-weight: 700;
+  letter-spacing: -0.052em;
+  line-height: 1;
+}
+
+.lead {
+  max-width: 760px;
+  margin: 28px 0 36px;
+  padding-left: 18px;
+  color: var(--ink-light);
+  border-left: 5px solid var(--rust);
+  font-size: 1.16rem;
+  line-height: 1.5;
+}
+
+.project-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.25fr;
+  border: 1px solid var(--ink);
+}
+
+.project-bar > * {
+  min-height: 63px;
+  padding: 12px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--ink-light);
+  background: var(--paper-light);
+  font-size: 0.77rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.project-bar > * + * {
+  border-left: 1px solid var(--ink);
+}
+
+.project-bar span {
+  margin-bottom: 2px;
+  color: var(--rust);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.project-bar a:hover,
+.project-bar a:focus-visible {
+  background: var(--khaki);
+}
+
+.project-bar .current-project {
+  color: var(--paper-light);
+  background: var(--ink);
+}
+
+.project-bar .current-project span {
+  color: var(--khaki);
+}
+
+.project-bar .author {
+  color: var(--ink);
+}
+
+/* GENERAL SECTIONS */
+
+.section-block {
+  padding: 72px 0;
+  scroll-margin-top: 18px;
+}
+
+.section-block + .section-block {
+  border-top: 1px solid var(--line);
+}
+
+.section-kicker {
+  margin: 0 0 8px;
+  color: var(--rust);
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+/* INTRODUCTION */
+
+.intro-heading {
+  margin-bottom: 27px;
+}
+
+.intro-copy {
+  width: 100%;
+  padding: 31px 35px;
+  background: var(--paper-light);
+  border-top: 4px solid var(--rust);
+  border-bottom: 1px solid var(--ink);
+}
+
+.intro-copy p {
+  margin: 0;
+}
+
+.intro-copy p + p {
+  margin-top: 20px;
+}
+
+.intro-copy a,
+.research-callout {
+  color: var(--rust);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.research-callout {
+  margin-top: 25px;
+  padding: 18px 21px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  font-size: 0.86rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.research-callout span {
+  color: var(--rust);
+  font-weight: 700;
+}
+
+.research-callout strong {
+  white-space: nowrap;
+}
+
+.research-callout:hover,
+.research-callout:focus-visible {
+  background: var(--khaki);
+}
+
+/* NUMBERED GUIDE SECTIONS */
+
+.section-heading {
+  margin-bottom: 34px;
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.section-number {
+  margin: 0;
+  color: var(--rust);
+  font-size: 2.85rem;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 1;
+}
+
+.section-number::after {
+  content: ".";
+}
+
+.section-heading h2 {
+  max-width: 900px;
+  margin-bottom: 10px;
+}
+
+.section-heading div > p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.guide-copy {
+  max-width: 850px;
+  margin-left: 98px;
+}
+
+.guide-copy p {
+  margin: 0 0 20px;
+}
+
+.text-link,
+.section-sources a {
+  color: var(--rust);
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.text-link:hover,
+.text-link:focus-visible,
+.section-sources a:hover,
+.section-sources a:focus-visible {
+  color: var(--ink);
+}
+
+/* PRACTICAL CALLOUTS */
+
+.action-box {
+  max-width: 850px;
+  margin: 31px 0 0 98px;
+  padding: 23px 27px;
+  background: var(--khaki);
+  border-left: 5px solid var(--rust);
+}
+
+.action-label {
+  margin: 0 0 5px;
+  color: var(--rust);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.action-box h3 {
+  margin: 0 0 9px;
+  font-size: 1.04rem;
+}
+
+.action-box p:last-child {
+  margin: 0;
+}
+
+.action-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.action-box li + li {
+  margin-top: 4px;
+}
+
+.section-sources {
+  max-width: 850px;
+  margin: 20px 0 0 98px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* TRAINING COMPARISON */
+
+.comparison {
+  max-width: 850px;
+  margin: 31px 0 0 98px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+}
+
+.comparison article {
+  min-height: 190px;
+  padding: 22px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper-light);
+}
+
+.comparison h3 {
+  margin: 0 0 11px;
+  color: var(--rust);
+  font-size: 1.05rem;
+}
+
+.comparison p {
+  margin: 0 0 15px;
+  font-size: 0.9rem;
+  line-height: 1.48;
+}
+
+.comparison strong {
+  font-size: 0.78rem;
+}
+
+/* CONCLUSION */
+
+.conclusion {
+  display: grid;
+  grid-template-columns: 165px minmax(0, 1fr);
+  gap: 34px;
+  background: var(--paper-light);
+  border-top: 4px solid var(--ink) !important;
+  border-bottom: 1px solid var(--ink);
+}
+
+.conclusion-label {
+  color: var(--rust);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.conclusion h2 {
+  margin-bottom: 27px;
+}
+
+.conclusion-copy {
+  grid-column: 2;
+  max-width: 800px;
+}
+
+.conclusion-copy p {
+  margin: 0;
+}
+
+.conclusion-copy p + p {
+  margin-top: 20px;
+}
+
+/* REFERENCES */
+
+.references {
+  padding-bottom: 96px;
+}
+
+.references-heading {
+  margin-bottom: 31px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.references-heading > a {
+  flex: 0 0 auto;
+  padding-bottom: 4px;
+  color: var(--rust);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.reference-list {
+  border-top: 2px solid var(--ink);
+}
+
+.reference-list > a {
+  min-height: 72px;
+  padding: 15px 8px;
+  display: grid;
+  grid-template-columns: 45px minmax(0, 1fr) 25px;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.reference-list > a:hover,
+.reference-list > a:focus-visible {
+  padding-left: 14px;
+  background: var(--khaki);
+}
+
+.reference-number {
+  color: var(--rust);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.reference-list strong,
+.reference-list small {
+  display: block;
+}
+
+.reference-list strong {
+  font-size: 0.96rem;
+  line-height: 1.35;
+}
+
+.reference-list small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.reference-arrow {
+  color: var(--rust);
+  font-size: 1.05rem;
+  text-align: right;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 27px 44px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--paper-light);
+  background: var(--ink);
+  border-top: 5px solid var(--rust);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: var(--paper-light);
+}
+
+/* TABLET */
+
+@media (max-width: 980px) {
+  :root {
+    --rail-width: 0px;
+  }
+
+  .site-header {
+    position: static;
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .site-header::after {
+    display: none;
+  }
+
+  .header-inner {
+    min-height: 0;
+    width: min(100% - 40px, 1080px);
+    margin-inline: auto;
+    padding: 18px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 13px 24px;
+  }
+
+  .site-name {
+    padding: 0;
+    border: 0;
+    font-size: 1.12rem;
+  }
+
+  .collection-button {
+    margin: 0;
+    padding: 8px 11px;
+    justify-self: end;
+  }
+
+  .collection-button span {
+    display: none;
+  }
+
+  nav {
+    grid-column: 1 / -1;
+    margin: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px 9px;
+  }
+
+  nav a {
+    padding: 4px 5px;
+    border: 0;
+    font-size: 0.65rem;
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    padding-left: 5px;
+  }
+
+  main,
+  footer {
+    margin-left: 0;
+  }
+
+  .title-block,
+  .section-block {
+    width: min(100% - 48px, 1080px);
+  }
+
+  .title-block {
+    min-height: 460px;
+    padding-top: 60px;
+  }
+}
+
+/* PHONE */
+
+@media (max-width: 700px) {
+  .header-inner {
+    display: block;
+  }
+
+  .collection-button {
+    width: fit-content;
+    margin-top: 13px;
+  }
+
+  nav {
+    margin-top: 12px;
+  }
+
+  .title-block {
+    min-height: 0;
+    padding: 52px 0 42px;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 13vw, 4rem);
+  }
+
+  .lead {
+    padding-left: 14px;
+  }
+
+  .project-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .project-bar > * + * {
+    border-top: 1px solid var(--ink);
+    border-left: 0;
+  }
+
+  .section-block {
+    padding: 53px 0;
+  }
+
+  .intro-copy {
+    padding: 25px;
+  }
+
+  .research-callout {
+    display: block;
+  }
+
+  .research-callout span,
+  .research-callout strong {
+    margin-top: 5px;
+    display: block;
+  }
+
+  .section-heading {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .section-number {
+    font-size: 2.2rem;
+  }
+
+  .guide-copy,
+  .action-box,
+  .comparison,
+  .section-sources {
+    margin-left: 0;
+  }
+
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison article {
+    min-height: 0;
+  }
+
+  .conclusion {
+    display: block;
+    padding: 40px 24px;
+  }
+
+  .conclusion-label {
+    margin-bottom: 13px;
+  }
+
+  .references-heading {
+    display: block;
+  }
+
+  .references-heading > a {
+    margin-top: 15px;
+    display: inline-block;
+  }
+
+  .reference-list > a {
+    grid-template-columns: 32px minmax(0, 1fr) 18px;
+    gap: 9px;
+  }
+
+  footer {
+    padding: 24px;
+    display: block;
+  }
+
+  footer a {
+    margin-top: 7px;
+    display: inline-block;
+  }
+}
+
+/* PRINT */
+
+@media print {
+  .site-header,
+  .skip-link {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 10.5pt;
+  }
+
+  main,
+  footer {
+    margin-left: 0;
+  }
+
+  .title-block,
+  .section-block {
+    width: 100%;
+  }
+
+  .title-block {
+    min-height: 0;
+    padding: 25px 0;
+  }
+
+  .section-block {
+    padding: 27px 0;
+  }
+
+  .action-box,
+  .comparison article,
+  .reference-list > a {
+    break-inside: avoid;
+  }
+}
