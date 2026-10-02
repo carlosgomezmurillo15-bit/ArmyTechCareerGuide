@@ -34,7 +34,7 @@ a {
   color: inherit;
 }
 
-/* LEFT RAIL */
+/* LEFT SIDEBAR */
 
 .site-header {
   position: fixed;
@@ -52,7 +52,6 @@ a {
   left: 31px;
   bottom: 34px;
   color: var(--ink-light);
-  font-family: var(--font-main);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -69,7 +68,6 @@ a {
   padding: 0 0 24px;
   color: var(--ink);
   border-bottom: 3px solid var(--ink);
-  font-family: var(--font-main);
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.15;
@@ -86,7 +84,6 @@ nav a {
   padding: 13px 4px;
   color: var(--ink-light);
   border-bottom: 1px solid rgba(24, 32, 31, 0.28);
-  font-family: var(--font-main);
   font-size: 0.77rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -104,6 +101,25 @@ nav a:focus-visible {
   padding-left: 10px;
   color: var(--ink);
   background: rgba(255, 255, 255, 0.24);
+}
+
+nav .project-two-nav {
+  margin-top: 18px;
+  padding: 12px 10px;
+  color: var(--paper-light);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+nav .project-two-nav::before {
+  content: "";
+}
+
+nav .project-two-nav:hover,
+nav .project-two-nav:focus-visible {
+  padding-left: 10px;
+  color: white;
+  background: var(--rust);
 }
 
 /* PAGE FRAME */
@@ -134,7 +150,6 @@ footer {
   padding: 0 0 7px;
   color: var(--rust);
   border-bottom: 2px solid var(--rust);
-  font-family: var(--font-main);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -152,7 +167,6 @@ h1 {
   max-width: 900px;
   margin: 0;
   color: var(--ink);
-  font-family: var(--font-main);
   font-size: clamp(2.8rem, 6vw, 5.3rem);
   font-weight: 700;
   letter-spacing: -0.05em;
@@ -165,9 +179,25 @@ h1 {
   padding-left: 18px;
   color: var(--ink-light);
   border-left: 5px solid var(--rust);
-  font-family: var(--font-main);
   font-size: 1.18rem;
   line-height: 1.5;
+}
+
+.roadmap-link {
+  align-self: flex-start;
+  margin-top: 22px;
+  padding: 13px 18px;
+  color: var(--paper-light);
+  background: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+.roadmap-link:hover,
+.roadmap-link:focus-visible {
+  background: var(--rust);
 }
 
 .collection-facts {
@@ -183,7 +213,6 @@ h1 {
   align-items: center;
   color: var(--ink-light);
   background: var(--paper-light);
-  font-family: var(--font-main);
   font-size: 0.76rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -212,7 +241,6 @@ h1 {
 h2 {
   margin: 0;
   color: var(--ink);
-  font-family: var(--font-main);
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -222,8 +250,7 @@ h2 {
 /* INTRODUCTION */
 
 section.introduction.section-block {
-  display: block !important;
-  grid-template-columns: none !important;
+  display: block;
 }
 
 .section-heading.introduction-heading {
@@ -232,18 +259,11 @@ section.introduction.section-block {
   margin-bottom: 28px;
 }
 
-.introduction > h2 {
+.intro-copy {
   display: block;
   width: 100%;
-  margin-bottom: 28px;
-}
-
-.intro-copy {
-  display: block !important;
-  grid-column: auto !important;
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
+  max-width: none;
+  margin: 0;
   padding: 30px 34px;
   background: var(--paper-light);
   border-top: 4px solid var(--rust);
@@ -273,7 +293,6 @@ section.introduction.section-block {
 .section-number {
   margin: 1px 0 0;
   color: var(--rust);
-  font-family: var(--font-main);
   font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: -0.08em;
@@ -326,11 +345,6 @@ section.introduction.section-block {
   background: var(--rust);
 }
 
-.source-card:nth-of-type(even) {
-  background: transparent;
-  box-shadow: none;
-}
-
 .source-tags {
   grid-area: tags;
   display: flex;
@@ -343,7 +357,6 @@ section.introduction.section-block {
   color: var(--olive);
   background: transparent;
   border: 1px solid var(--khaki-dark);
-  font-family: var(--font-main);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -355,7 +368,6 @@ section.introduction.section-block {
   grid-area: title;
   margin: 17px 0 8px;
   color: var(--ink);
-  font-family: var(--font-main);
   font-size: 1.48rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -378,7 +390,6 @@ section.introduction.section-block {
   color: var(--rust);
   background: transparent;
   border-bottom: 2px solid var(--rust);
-  font-family: var(--font-main);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -393,7 +404,6 @@ section.introduction.section-block {
 .source-link:hover,
 .source-link:focus-visible {
   color: var(--ink);
-  background: transparent;
   border-bottom-color: var(--ink);
 }
 
@@ -413,7 +423,6 @@ section.introduction.section-block {
 
 .annotation strong {
   color: var(--olive);
-  font-family: var(--font-main);
   font-size: 0.9rem;
 }
 
@@ -425,13 +434,16 @@ footer {
   background: var(--ink);
   border-top: 5px solid var(--rust);
   text-align: center;
-  font-family: var(--font-main);
   font-size: 0.76rem;
   letter-spacing: 0.04em;
 }
 
 footer p {
   margin: 3px 0;
+}
+
+footer a {
+  color: var(--paper-light);
 }
 
 /* TABLET */
@@ -487,14 +499,23 @@ footer p {
     padding-left: 7px;
   }
 
+  nav .project-two-nav {
+    margin-top: 0;
+    padding: 5px 9px;
+  }
+
+  nav .project-two-nav:hover,
+  nav .project-two-nav:focus-visible {
+    padding-left: 9px;
+  }
+
   main,
   footer {
     margin-left: 0;
   }
 
   .title-block,
-  .section-block,
-  section.introduction.section-block {
+  .section-block {
     width: min(100% - 48px, 1080px);
   }
 
@@ -594,8 +615,7 @@ footer p {
   }
 
   .title-block,
-  .section-block,
-  section.introduction.section-block {
+  .section-block {
     width: 100%;
   }
 
