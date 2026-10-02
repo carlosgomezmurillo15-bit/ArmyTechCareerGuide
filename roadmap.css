@@ -1,414 +1,166 @@
-:root {
-  --ink: #1e2825;
-  --muted: #53605a;
-  --paper: #f8f7f2;
-  --line: #d6d8cf;
-  --green: #234f40;
-  --highlight: #e7eee3;
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: Arial, Helvetica, sans-serif;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  color: var(--ink);
-  background: var(--paper);
-  font: 17px/1.68 var(--sans);
-}
-
-a {
-  color: var(--green);
-  text-underline-offset: 3px;
-}
-
-a:hover { color: #133125; }
-
-a:focus-visible {
-  outline: 3px solid #b7803d;
-  outline-offset: 3px;
-}
-
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 8px;
-  z-index: 20;
-  padding: 8px 14px;
-  background: white;
-}
-
-.skip-link:focus { left: 8px; }
-
-.site-header {
-  border-bottom: 1px solid var(--line);
-  background: #fffefa;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.site-name {
-  font: bold 18px/1.2 var(--serif);
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.site-header nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  font-size: 14px;
-}
-
-.site-header nav a {
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.site-header nav a:hover,
-.site-header nav .current {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-}
-
-.hero {
-  padding: 76px max(30px, calc((100vw - 1100px) / 2)) 68px;
-  background: #e8ebe3;
-  border-bottom: 1px solid var(--line);
-}
-
-.kicker,
-.chapter-number,
-.contents-title {
-  margin: 0 0 16px;
-  color: var(--green);
-  font: bold 12px/1.4 var(--sans);
-  letter-spacing: .13em;
-  text-transform: uppercase;
-}
-
-h1, h2, h3, p { margin-top: 0; }
-
-h1, h2, h3 {
-  font-family: var(--serif);
-  font-weight: normal;
-  letter-spacing: -.025em;
-}
-
-h1 {
-  max-width: 780px;
-  margin-bottom: 24px;
-  font-size: clamp(3.1rem, 6.5vw, 5.8rem);
-  line-height: 1.04;
-}
-
-.deck {
-  max-width: 700px;
-  margin-bottom: 28px;
-  font: 23px/1.45 var(--serif);
-}
-
-.byline {
-  margin: 0;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.page-grid {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 70px 30px 100px;
-  display: grid;
-  grid-template-columns: 200px minmax(0, 760px);
-  gap: clamp(45px, 7vw, 125px);
-}
-
-.contents {
-  align-self: start;
-  position: sticky;
-  top: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-top: 7px;
-  font-size: 14px;
-  line-height: 1.35;
-}
-
-.contents-title { margin-bottom: 8px; }
-
-.contents a {
-  text-decoration: none;
-  color: var(--muted);
-}
-
-.contents a:hover {
-  color: var(--green);
-  text-decoration: underline;
-}
-
-.article { min-width: 0; }
-
-.article section { scroll-margin-top: 35px; }
-
-.article h2 {
-  font-size: clamp(2rem, 4vw, 2.85rem);
-  line-height: 1.14;
-  margin-bottom: 25px;
-}
-
-.article h3 {
-  font-size: 1.3rem;
-  line-height: 1.25;
-  margin-bottom: 9px;
-}
-
-.article p { margin-bottom: 19px; }
-
-.intro { padding-bottom: 44px; }
-
-.intro p:first-of-type { font-size: 18px; }
-
-.scope {
-  padding-left: 19px;
-  border-left: 3px solid var(--green);
-  color: var(--muted);
-}
-
-.chapter {
-  padding: 55px 0 58px;
-  border-top: 1px solid var(--line);
-}
-
-.chapter-number { margin-bottom: 12px; }
-
-.margin-note {
-  margin: 29px 0 0;
-  padding: 16px 21px;
-  background: var(--highlight);
-  border-left: 3px solid var(--green);
-  font-size: 15px;
-  line-height: 1.55;
-}
-
-.comparison {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin: 29px 0 14px;
-}
-
-.comparison > div {
-  padding: 18px 17px 5px;
-  border-top: 3px solid var(--green);
-  background: #eeefe9;
-}
-
-.comparison p {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.small-note {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.example {
-  margin: 22px 0 0;
-  padding: 43px 45px 27px;
-  background: #e8ebe3;
-}
-
-.example h2 { max-width: 570px; }
-
-.plan { padding: 72px 0 60px; }
-
-.plan ol {
-  list-style: none;
-  counter-reset: plan;
-  margin: 26px 0 30px;
-  padding: 0;
-  border-top: 1px solid var(--line);
-}
-
-.plan li {
-  position: relative;
-  counter-increment: plan;
-  padding: 15px 0 15px 45px;
-  border-bottom: 1px solid var(--line);
-}
-
-.plan li::before {
-  content: counter(plan);
-  position: absolute;
-  left: 3px;
-  top: 16px;
-  color: var(--green);
-  font: bold 17px var(--serif);
-}
-
-.sources {
-  padding: 45px 0 0;
-  border-top: 1px solid var(--line);
-}
-
-.sources p,
-.sources li { font-size: 14px; }
-
-.sources ul {
-  columns: 2;
-  column-gap: 35px;
-  padding-left: 18px;
-}
-
-.sources li {
-  break-inside: avoid;
-  margin-bottom: 12px;
-  line-height: 1.45;
-}
-
-.site-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 28px max(30px, calc((100vw - 1100px) / 2));
-  color: #f5f7f3;
-  background: #1e392f;
-  font-size: 14px;
-}
-
-.site-footer a { color: #f5f7f3; }
-
-@media (max-width: 850px) {
-  .page-grid {
-    display: block;
-    padding-top: 40px;
-  }
-
-  .contents {
-    position: static;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 55px;
-    padding: 15px 0 20px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .contents-title { grid-column: 1 / -1; }
-}
-
-@media (max-width: 600px) {
-  body { font-size: 16px; }
-
-  .header-inner {
-    display: block;
-    padding: 16px 20px;
-  }
-
-  .site-header nav {
-    margin-top: 14px;
-    gap: 8px 17px;
-  }
-
-  .hero { padding: 54px 22px 48px; }
-
-  .deck { font-size: 20px; }
-
-  .page-grid { padding: 25px 22px 65px; }
-
-  .contents {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 38px;
-  }
-
-  .chapter { padding: 42px 0; }
-
-  .comparison { display: block; }
-
-  .comparison > div { margin-bottom: 15px; }
-
-  .example {
-    margin-left: -22px;
-    margin-right: -22px;
-    padding: 36px 22px 18px;
-  }
-
-  .sources ul { columns: 1; }
-
-  .site-footer {
-    display: block;
-    padding: 25px 22px;
-  }
-
-  .site-footer a {
-    display: block;
-    margin-top: 8px;
-  }
-}
-
-@media print {
-  body {
-    background: white;
-    color: black;
-    font-size: 11pt;
-  }
-
-  .site-header,
-  .contents,
-  .skip-link { display: none; }
-
-  .hero {
-    padding: 0 0 20px;
-    background: white;
-  }
-
-  h1 { font-size: 34pt; }
-
-  .page-grid {
-    display: block;
-    padding: 0;
-    max-width: none;
-  }
-
-  .article { max-width: none; }
-
-  .chapter { padding: 18px 0; }
-
-  .example {
-    background: #eee;
-    padding: 20px;
-  }
-
-  .plan { padding: 25px 0; }
-
-  .site-footer {
-    background: white;
-    color: black;
-    padding: 10px 0;
-  }
-
-  .site-footer a,
-  a { color: black; }
-
-  .comparison > div,
-  .margin-note { background: #f5f5f5; }
-
-  h2,
-  h3,
-  li,
-  .comparison > div { break-inside: avoid; }
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical Army-to-tech career guide by Carlos Gomez, connecting job choice, military experience, training, benefits, and the civilian job search.">
+  <title>From Army Service to a Tech Career | Carlos Gomez</title>
+  <link rel="stylesheet" href="roadmap.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to guide</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Army Tech Career Guide</a>
+      <nav aria-label="Site navigation">
+        <a href="index.html">Source collection</a>
+        <a class="current" href="career-roadmap.html" aria-current="page">Career roadmap</a>
+        <a href="#plan">Your plan</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="hero">
+      <p class="kicker">CMPA 4301 / Project 02</p>
+      <h1>From Army service<br>to a tech career</h1>
+      <p class="deck">A guide to choosing a civilian IT or cybersecurity goal, using the experience you already have, and making your next move count.</p>
+      <p class="byline">Carlos Gomez</p>
+    </header>
+
+    <div class="page-grid">
+      <aside class="contents" aria-label="On this page">
+        <p class="contents-title">In this guide</p>
+        <a href="#start">Start here</a>
+        <a href="#role">Pick a role</a>
+        <a href="#skills">Translate your experience</a>
+        <a href="#training">Choose training</a>
+        <a href="#funding">Check the cost</a>
+        <a href="#experience">Build proof</a>
+        <a href="#search">Apply and get feedback</a>
+        <a href="#example">A worked example</a>
+        <a href="#plan">Make your plan</a>
+      </aside>
+
+      <div class="article">
+        <section id="start" class="intro">
+          <h2>Start with the job, then work backward</h2>
+          <p>I put this together for Soldiers who are interested in civilian tech work but are staring at too many options. I am in the Army Reserve as a 35F intelligence analyst, close to graduating with a degree in Computing Applications, and thinking about my own next steps. A degree, a certification, a training program, and an internship can all sound useful. They do different jobs, though, and the order matters.</p>
+          <p>The <a href="index.html">source collection I built for Project 01</a> gathers and evaluates the individual resources. This guide connects them into a process. Choose a job you can name. Compare its requirements with what you can already show. Fill a specific gap, check the cost, get practical evidence, and then take that story into the job search. You can read straight through or jump to the decision you are making now.</p>
+          <p class="scope">This is for active-duty and Reserve Soldiers exploring civilian IT and cybersecurity careers, especially those approaching graduation or a transition. It is a starting point for making choices, not a promise that one credential or program leads to a job.</p>
+        </section>
+
+        <section id="role" class="chapter">
+          <p class="chapter-number">1 / Direction</p>
+          <h2>Pick a role before you pick a course</h2>
+          <p>“I want to work in cybersecurity” is a start, but it does not tell you what to study. A security operations analyst monitors alerts and investigates activity. A governance, risk, and compliance (GRC) analyst works with controls, policies, and evidence. An IT support specialist solves user and system problems. These roles share some skills, but their day-to-day work is different.</p>
+          <p>Try <a href="https://www.mynextmove.org/vets/">My Next Move for Veterans</a> to connect military experience with civilian occupations, then use <a href="https://www.cyberseek.org/">CyberSeek</a> to look at cybersecurity roles and the skills associated with them. These are maps, not hiring guarantees. Open a few real job postings in your area and check whether the tools, tasks, and experience in those postings match the picture the career sites give you.</p>
+          <div class="margin-note"><strong>Make it concrete:</strong> Write down one target role and two related entry points. Save three job postings and underline the requirements that appear more than once.</div>
+        </section>
+
+        <section id="skills" class="chapter">
+          <p class="chapter-number">2 / Translation</p>
+          <h2>See what your Army experience already covers</h2>
+          <p>Military work can be relevant even if the job title does not sound technical. An intelligence analyst may already be used to checking information, documenting findings, briefing people, and handling sensitive material. That does not automatically qualify someone to administer a network or investigate a security incident. The useful question is: which parts of my work can I demonstrate, and which parts still need hands-on practice?</p>
+          <p>The <a href="https://csrc.nist.gov/pubs/sp/800/181/r1/final">NIST NICE Framework</a> breaks cybersecurity work into tasks, knowledge, and skills. Compare a target job with the work you actually did, then describe that work in civilian language. If you are planning another degree or using past training toward one, the <a href="https://militaryguide.acenet.edu/">ACE Military Guide</a> helps identify credit recommendations; your school decides what credit it accepts.</p>
+          <div class="margin-note"><strong>One honest translation:</strong> “Prepared intelligence products for leaders using multiple information sources” is stronger than claiming cybersecurity experience you have not had.</div>
+        </section>
+
+        <section id="training" class="chapter">
+          <p class="chapter-number">3 / Preparation</p>
+          <h2>Choose training for the gap you found</h2>
+          <p>A credential is useful when it helps you meet a real requirement. It is less useful when it is only another line on a resume. Compare the job postings you saved with your skills list. If they repeatedly ask for networking basics, study and practice networking. If they ask for policy writing and control testing, a pile of unrelated technical certificates will not answer that need.</p>
+          <p><a href="https://www.cool.osd.mil/army/index.html">Army COOL</a> lets Soldiers explore credentials related to military and civilian occupations. <a href="https://ivmf.syracuse.edu/programs/career-training/about-o2o/">Onward to Opportunity</a> offers career training and certification paths for eligible service members and military-connected learners. Check the current program details before building a schedule around either option.</p>
+
+          <div class="comparison" role="group" aria-label="Ways to close a skill gap">
+            <div>
+              <h3>Degree coursework</h3>
+              <p>Good for a broad foundation and roles that require a degree. Compare remaining classes with your target role before adding another program.</p>
+            </div>
+            <div>
+              <h3>Certification</h3>
+              <p>Good for a named skill or hiring requirement. Choose it after checking postings and plan to practice the skill, not only pass the exam.</p>
+            </div>
+            <div>
+              <h3>Structured training</h3>
+              <p>Good when you need a schedule and support. Ask what you will actually make or demonstrate by the end.</p>
+            </div>
+          </div>
+
+          <p class="small-note">These can overlap. The goal is to close the clearest gap first, not collect all three at once.</p>
+        </section>
+
+        <section id="funding" class="chapter">
+          <p class="chapter-number">4 / Cost</p>
+          <h2>Check the cost before you commit</h2>
+          <p>Once you have a training choice, look at the whole bill: tuition or course fees, exams, books, time, and any out-of-pocket costs. The <a href="https://myarmybenefits.us.army.mil/Benefit-Library/Federal-Benefits/Tuition-Assistance-%28TA%29">Army Tuition Assistance page</a> explains the education benefit and points to current requirements. The <a href="https://www.va.gov/education/gi-bill-comparison-tool/">VA GI Bill Comparison Tool</a> helps compare approved schools and estimated benefits. Those sources answer different questions, so use the one that fits the program you are considering.</p>
+          <p>Do not assume a school, course, or exam is covered just because a benefit exists. Ask the education office or program contact about your eligibility and approval steps before enrolling. If a free or funded option closes the same gap, compare it with the paid one rather than choosing by brand name.</p>
+        </section>
+
+        <section id="experience" class="chapter">
+          <p class="chapter-number">5 / Evidence</p>
+          <h2>Build proof you can talk about in an interview</h2>
+          <p>Training gives you knowledge. Employers also need to see how you use it. For a technical role, that could be a documented home lab, a troubleshooting write-up, or a project from class. For GRC, it might be a sample risk register or a plain-language explanation of a security control. Use fictional or public information in portfolio examples; never publish Army material.</p>
+          <p><a href="https://www.skillbridge.mil/">DoD SkillBridge</a> connects eligible transitioning service members with industry training opportunities, subject to command approval and program rules. <a href="https://www.apprenticeship.gov/apprenticeship-job-finder">Apprenticeship.gov's Job Finder</a> is another way to locate earn-and-learn opportunities. SkillBridge is tied to a particular transition window; an apprenticeship may fit a different timeline. Neither replaces checking the actual opening and its requirements.</p>
+        </section>
+
+        <section id="search" class="chapter">
+          <p class="chapter-number">6 / Search</p>
+          <h2>Make the civilian version of your story clear</h2>
+          <p>Use the target job title in your search, and make each resume bullet show a task, an action, and an outcome when you can. Spell out military terms the first time. A civilian hiring manager should understand what you did without knowing your MOS. Match the resume to the posting, but do not claim tools you have not used.</p>
+          <p><a href="https://www.acp-usa.org/">American Corporate Partners</a> offers a mentoring program that can help veterans and eligible military spouses get feedback from someone in industry. <a href="https://www.militaryonesource.mil/resources/millife-guides/employment/">Military OneSource's employment resources</a> offer career and transition support. A mentor can help test whether your target role and resume make sense, while a career resource can help with the mechanics of applications. Ask for specific feedback: “Which part of this resume would make you unsure I can do this job?”</p>
+        </section>
+
+        <section id="example" class="example">
+          <p class="chapter-number">Putting it together</p>
+          <h2>What this could look like for a 35F</h2>
+          <p>Say a 35F who is nearly done with a Computing Applications degree is interested in GRC. They find GRC postings through CyberSeek and local employers, then compare the repeated tasks with the NICE Framework. Their experience briefing leaders, checking sources, and documenting findings gives them a story about analysis and communication. The gap is experience with civilian security controls and risk documentation.</p>
+          <p>Instead of signing up for several certifications at once, they choose one relevant course or credential, check Army COOL and benefit rules, and make a sample risk register using fictional data. They put the project beside two honest Army examples on a resume and ask a mentor to review it. If GRC openings require more experience than they have, they also apply to related analyst or IT support roles. That is a workable direction, with room to adjust after real feedback.</p>
+          <p class="small-note">This is an example of the decision process, not a claim that every 35F has the same experience or qualifies for the same program.</p>
+        </section>
+
+        <section id="plan" class="plan">
+          <p class="chapter-number">Take this with you</p>
+          <h2>Your one-page plan</h2>
+          <p>Keep this short enough to revisit when you find a new program or job posting. You can write it in a notebook, a document, or the notes on your phone.</p>
+          <ol>
+            <li><strong>Target:</strong> My first-choice role is ________. Two related roles are ________ and ________.</li>
+            <li><strong>Evidence:</strong> Three job postings keep asking for ________. I can already show ________ from Army, school, or personal work.</li>
+            <li><strong>Gap:</strong> The one skill or experience I most need to build is ________.</li>
+            <li><strong>Training and cost:</strong> I will compare ________ with ________ and confirm eligibility before I enroll.</li>
+            <li><strong>Proof:</strong> I can make or complete ________ to show the skill in practice.</li>
+            <li><strong>Feedback:</strong> I will ask ________ to review my resume or project, then apply to ________ roles.</li>
+          </ol>
+          <p>Return to the <a href="index.html">curated collection</a> when you need deeper notes on a source. The guide gives you the order; the collection shows what each resource can and cannot do.</p>
+        </section>
+
+        <section id="sources" class="sources">
+          <h2>Sources used in this guide</h2>
+          <p>These are the resources behind the decisions above. Each is discussed in more detail in the <a href="index.html">Project 01 collection</a>.</p>
+          <ul>
+            <li><a href="https://www.mynextmove.org/vets/">My Next Move for Veterans</a> — National Center for O*NET Development</li>
+            <li><a href="https://www.cyberseek.org/">CyberSeek</a> — Lightcast, CompTIA, NIST NICE</li>
+            <li><a href="https://csrc.nist.gov/pubs/sp/800/181/r1/final">NICE Workforce Framework for Cybersecurity</a> — NIST</li>
+            <li><a href="https://militaryguide.acenet.edu/">ACE Military Guide</a> — American Council on Education</li>
+            <li><a href="https://www.cool.osd.mil/army/index.html">Army COOL</a> — Department of Defense</li>
+            <li><a href="https://ivmf.syracuse.edu/programs/career-training/about-o2o/">Onward to Opportunity</a> — Syracuse University IVMF</li>
+            <li><a href="https://myarmybenefits.us.army.mil/Benefit-Library/Federal-Benefits/Tuition-Assistance-%28TA%29">Tuition Assistance</a> — MyArmyBenefits</li>
+            <li><a href="https://www.va.gov/education/gi-bill-comparison-tool/">GI Bill Comparison Tool</a> — U.S. Department of Veterans Affairs</li>
+            <li><a href="https://www.skillbridge.mil/">DoD SkillBridge</a> — Department of Defense</li>
+            <li><a href="https://www.apprenticeship.gov/apprenticeship-job-finder">Apprenticeship Job Finder</a> — U.S. Department of Labor</li>
+            <li><a href="https://www.acp-usa.org/">American Corporate Partners</a> — mentoring program</li>
+            <li><a href="https://www.militaryonesource.mil/resources/millife-guides/employment/">Employment resources</a> — Military OneSource</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>Carlos Gomez · CMPA 4301</span>
+    <a href="index.html">Explore the source collection →</a>
+  </footer>
+</body>
+</html>
